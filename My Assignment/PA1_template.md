@@ -1,4 +1,3 @@
-
 Projetc 1 Markdown
 
 ###Loading and preprocessing the data
@@ -46,19 +45,19 @@ dates_data<-as.Date(levels(factor(Activity_data_clean$date)), "%Y-%m-%d")
 plot(dates_data,step_per_day, ylab = "Total number of steps")
 ```
 
-![](Project1_files/figure-html/unnamed-chunk-3-1.png)\
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
 
 ```r
 barplot(step_per_day, ylab = "Total number of steps")
 ```
 
-![](Project1_files/figure-html/unnamed-chunk-3-2.png)\
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-2.png)
 
 ```r
 hist(step_per_day, breaks = 10 , xlab = "Total number of steps per day",main="Histogram: steps per day")
 ```
 
-![](Project1_files/figure-html/unnamed-chunk-3-3.png)\
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-3.png)
 
 ```r
 summary(step_per_day)
@@ -84,7 +83,7 @@ Time_step_5min<-names(step_mean_5min[step_mean_5min==max(step_mean_5min)])
 abline(v=as.numeric(Time_step_5min), col="blue")
 ```
 
-![](Project1_files/figure-html/unnamed-chunk-4-1.png)\
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
 
 
@@ -182,4 +181,4 @@ plot.ts(time_5min_weeked,step_mean_5min_weeked,type = "l",ylab="Weekend", xlab="
 plot.ts(time_5min_weekday,step_mean_5min_weekday,type = "l",ylab="Weekday", xlab="5-min hrmin")
 ```
 
-![](Project1_files/figure-html/unnamed-chunk-6-1.png)\
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)

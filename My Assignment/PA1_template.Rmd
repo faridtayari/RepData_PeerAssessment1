@@ -1,4 +1,3 @@
-
 Projetc 1 Markdown
 
 ###Loading and preprocessing the data
