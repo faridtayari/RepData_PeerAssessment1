@@ -45,19 +45,19 @@ dates_data<-as.Date(levels(factor(Activity_data_clean$date)), "%Y-%m-%d")
 plot(dates_data,step_per_day, ylab = "Total number of steps")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)\
 
 ```r
 barplot(step_per_day, ylab = "Total number of steps")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-2.png)
+![](PA1_template_files/figure-html/unnamed-chunk-3-2.png)\
 
 ```r
 hist(step_per_day, breaks = 10 , xlab = "Total number of steps per day",main="Histogram: steps per day")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-3.png)
+![](PA1_template_files/figure-html/unnamed-chunk-3-3.png)\
 
 ```r
 summary(step_per_day)
@@ -83,7 +83,7 @@ Time_step_5min<-names(step_mean_5min[step_mean_5min==max(step_mean_5min)])
 abline(v=as.numeric(Time_step_5min), col="blue")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)\
 
 
 
@@ -133,20 +133,27 @@ dates_data_W_NA<-as.Date(levels(factor(Activity_data_W_NA$date)), "%Y-%m-%d")
 
 step_per_day_W_NA<-tapply(Activity_data_W_NA$steps,Activity_data_W_NA$date,sum)
 
-png("plot4.png", width=480, height=480)
+#png("plot4.png", width=480, height=480)
 plot(dates_data_W_NA,step_per_day_W_NA, ylab = "Total number of steps")
-
-barplot(step_per_day_W_NA, ylab = "Total number of steps")
-hist(step_per_day_W_NA, breaks = 10 , xlab = "Total number of steps per day",main="Histogram: steps per day")
-dev.off()
 ```
 
-```
-## png 
-##   2
-```
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)\
 
 ```r
+barplot(step_per_day_W_NA, ylab = "Total number of steps")
+```
+
+![](PA1_template_files/figure-html/unnamed-chunk-5-2.png)\
+
+```r
+hist(step_per_day_W_NA, breaks = 10 , xlab = "Total number of steps per day",main="Histogram: steps per day")
+```
+
+![](PA1_template_files/figure-html/unnamed-chunk-5-3.png)\
+
+```r
+#dev.off()
+
 summary(step_per_day_W_NA)
 ```
 
@@ -181,4 +188,4 @@ plot.ts(time_5min_weeked,step_mean_5min_weeked,type = "l",ylab="Weekend", xlab="
 plot.ts(time_5min_weekday,step_mean_5min_weekday,type = "l",ylab="Weekday", xlab="5-min hrmin")
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)\

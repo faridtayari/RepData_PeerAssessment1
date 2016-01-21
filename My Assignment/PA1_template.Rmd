@@ -1,3 +1,8 @@
+---
+output: 
+  html_document: 
+    keep_md: yes
+---
 Projetc 1 Markdown
 
 ###Loading and preprocessing the data
@@ -16,7 +21,7 @@ step_per_day
 ```
 
 
-```{r}
+```{r fig.width=8, fig.height=6}
 dates_data<-as.Date(levels(factor(Activity_data_clean$date)), "%Y-%m-%d")
 plot(dates_data,step_per_day, ylab = "Total number of steps")
 barplot(step_per_day, ylab = "Total number of steps")
@@ -27,7 +32,7 @@ summary(step_per_day)
 
 
 ###What is the average daily activity pattern? 
-```{r}
+```{r fig.width=8, fig.height=6}
 step_mean_5min<-tapply(Activity_data_clean$steps,Activity_data_clean$interval,mean)
 time_5min<-levels(factor(Activity_data_clean$interval))
 plot.ts(time_5min,step_mean_5min,type = "l",ylab="average steps per 5 min", xlab="5-min hrmin")
@@ -41,7 +46,7 @@ abline(v=as.numeric(Time_step_5min), col="blue")
 
 
 ###Imputing missing values
-```{r}
+```{r fig.width=8, fig.height=6}
 summary(Activity_data)
 mean(is.na(Activity_data))
 sum((is.na(Activity_data))==TRUE)
@@ -58,13 +63,13 @@ dates_data_W_NA<-as.Date(levels(factor(Activity_data_W_NA$date)), "%Y-%m-%d")
 
 step_per_day_W_NA<-tapply(Activity_data_W_NA$steps,Activity_data_W_NA$date,sum)
 
-png("plot4.png", width=480, height=480)
+#png("plot4.png", width=480, height=480)
 plot(dates_data_W_NA,step_per_day_W_NA, ylab = "Total number of steps")
 
 barplot(step_per_day_W_NA, ylab = "Total number of steps")
 hist(step_per_day_W_NA, breaks = 10 , xlab = "Total number of steps per day",main="Histogram: steps per day")
-dev.off()
-
+#dev.off()
+ 
 summary(step_per_day_W_NA)
 ```
 
